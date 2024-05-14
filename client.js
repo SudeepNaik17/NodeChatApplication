@@ -1,5 +1,5 @@
 const socket = io()
-let name;
+let name = prompt('Please enter your name: ');
 const button = document.querySelector('.submit')
 const input= document.querySelector('#inputVal');
 const newUser=document.querySelector('.user-joined');
@@ -17,7 +17,7 @@ const userMess=(mess,pos)=>{
   newEl.innerText=mess;
   chatBox.append(newEl);
 }
-name = prompt('Please enter your name: ');
+
 
 socket.emit('new-user-joined',name);
 
